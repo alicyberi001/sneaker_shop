@@ -1,9 +1,9 @@
 import { toast } from "../libs/toast";
-import { login } from "../apis/services/auth.service";
+import { signup } from "../apis/services/auth.service";
 import { errorHandler } from "../libs/errorHandling.js";
 // import { setSessionToken } from "../libs/session-manager";
 
-const loginForm = document.getElementById("loginForm");
+const signupForm = document.getElementById("signupForm");
 const inputpass = document.getElementById("password");
 const inputuser = document.getElementById("inputuser");
 const eyes = document.getElementById("eyes");
@@ -36,21 +36,21 @@ eyes.addEventListener("click", hideHandler);
 
 // ================================================================================================
 
-loginForm.addEventListener("submit", async (event) => {
+signupForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const usernameInput = event.target.username;
   const passwordInput = event.target.password;
   try {
-    const response = await login({
+    const response = await signup({
       username: usernameInput.value,
       password: passwordInput.value,
     });
     // setSessionToken(response.token);
-    toast("Logged in", "success");
+    toast("signed in", "success");
     setTimeout(() => {
-      window.location.href = "/home";
+      window.location.href = "/index";
     }, 3000);
-    console.log('ok');
+    console.log(response);
     
   } catch (error) {
     console.log(error);

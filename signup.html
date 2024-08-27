@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-[100%]">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exersice</title>
+    <title>Signup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
-  <body class="focus:border-gray-950">
+  <body class="h-[100%]">
     <div
-      class="container w-full flex-col flex items-center justify-center px-6"
+      class="container w-full flex-col flex items-center justify-center px-6 h-[100%]"
     >
       <div class="w-full h-[56px] items-center flex">
         <svg
@@ -41,63 +41,69 @@
           />
         </svg>
       </div>
-      <p class="text-[28px] font-semibold w-[342px] h-[39px] mb-9">
+      <p class="text-[29px] font-semibold w-full h-[39px] mb-9 whitespace-nowrap">
         Signup to to your Account
       </p>
-      <div class="flex flex-col items-center justify-center gap-y-5">
-        <div class="relative">
-          <svg
-            class="absolute top-3 left-2"
-            width="14"
-            height="11"
-            viewBox="0 0 14 11"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M0.04375 1.61063C0.131966 1.22409 0.348823 0.878961 0.658806 0.63177C0.968789 0.384578 1.35352 0.249973 1.75 0.25H12.25C12.6465 0.249973 13.0312 0.384578 13.3412 0.63177C13.6512 0.878961 13.868 1.22409 13.9563 1.61063L7 5.86225L0.04375 1.61063ZM0 2.60987V8.82587L5.07762 5.71263L0 2.60987ZM5.91587 6.22625L0.167125 9.74988C0.309161 10.0494 0.533336 10.3024 0.813559 10.4794C1.09378 10.6565 1.41853 10.7503 1.75 10.75H12.25C12.5814 10.7501 12.906 10.656 13.1861 10.4788C13.4662 10.3016 13.6902 10.0485 13.832 9.749L8.08325 6.22538L7 6.88775L5.91587 6.22538V6.22625ZM8.92237 5.7135L14 8.82587V2.60987L8.92237 5.71263V5.7135Z"
-              fill="#6C757D"
+      <form id="signupForm" action="" class="relative flex flex-col justify-center items-center h-[100%] flex-1">
+        <div class="flex flex-col items-center justify-center gap-y-5">
+          <div class="relative">
+            <svg
+              class="absolute top-3 left-2"
+              width="14"
+              height="11"
+              viewBox="0 0 14 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.04375 1.61063C0.131966 1.22409 0.348823 0.878961 0.658806 0.63177C0.968789 0.384578 1.35352 0.249973 1.75 0.25H12.25C12.6465 0.249973 13.0312 0.384578 13.3412 0.63177C13.6512 0.878961 13.868 1.22409 13.9563 1.61063L7 5.86225L0.04375 1.61063ZM0 2.60987V8.82587L5.07762 5.71263L0 2.60987ZM5.91587 6.22625L0.167125 9.74988C0.309161 10.0494 0.533336 10.3024 0.813559 10.4794C1.09378 10.6565 1.41853 10.7503 1.75 10.75H12.25C12.5814 10.7501 12.906 10.656 13.1861 10.4788C13.4662 10.3016 13.6902 10.0485 13.832 9.749L8.08325 6.22538L7 6.88775L5.91587 6.22538V6.22625ZM8.92237 5.7135L14 8.82587V2.60987L8.92237 5.71263V5.7135Z"
+                fill="#6C757D"
+              />
+            </svg>
+            <input
+              name="username"
+              id="inputuser"
+              type="text"
+              placeholder="username"
+              class="w-[380px] h-[37px] bg-gray-200 rounded-[4px] px-7"
             />
-          </svg>
-          <input
-            type="text"
-            placeholder="username"
-            class="w-[380px] h-[37px] bg-gray-200 rounded-[4px] px-7"
-          />
+          </div>
+          <div class="relative">
+            <i id="eyes" class="fas fa-eye absolute top-3 right-2"></i>
+            <svg class="absolute top-3 left-2" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_2553)">
+              <path d="M2.1875 8.375C2.1875 7.91087 2.37187 7.46575 2.70006 7.13756C3.02825 6.80937 3.47337 6.625 3.9375 6.625H10.0625C10.5266 6.625 10.9717 6.80937 11.2999 7.13756C11.6281 7.46575 11.8125 7.91087 11.8125 8.375V12.75C11.8125 13.2141 11.6281 13.6592 11.2999 13.9874C10.9717 14.3156 10.5266 14.5 10.0625 14.5H3.9375C3.47337 14.5 3.02825 14.3156 2.70006 13.9874C2.37187 13.6592 2.1875 13.2141 2.1875 12.75V8.375Z" fill="#6C757D"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.9375 4C3.9375 3.18777 4.26016 2.40882 4.83449 1.83449C5.40882 1.26016 6.18777 0.9375 7 0.9375C7.81223 0.9375 8.59118 1.26016 9.16551 1.83449C9.73984 2.40882 10.0625 3.18777 10.0625 4V6.625H9.1875V4C9.1875 3.41984 8.95703 2.86344 8.5468 2.4532C8.13656 2.04297 7.58016 1.8125 7 1.8125C6.41984 1.8125 5.86344 2.04297 5.4532 2.4532C5.04297 2.86344 4.8125 3.41984 4.8125 4V6.625H3.9375V4Z" fill="#6C757D"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_1_2553">
+              <rect width="14" height="14" fill="white" transform="translate(0 0.5)"/>
+              </clipPath>
+              </defs>
+              </svg>            
+            <input
+              name="password"
+              id="password"
+              type="password"
+              placeholder="password"
+              class="w-[380px] h-[37px] bg-gray-200 rounded-[4px] px-7"
+            />
+          </div>
         </div>
-        <div class="relative">
-          <i id="eyes" class="fas fa-eye absolute top-3 right-2"></i>
-          <svg class="absolute top-3 left-2" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_1_2553)">
-            <path d="M2.1875 8.375C2.1875 7.91087 2.37187 7.46575 2.70006 7.13756C3.02825 6.80937 3.47337 6.625 3.9375 6.625H10.0625C10.5266 6.625 10.9717 6.80937 11.2999 7.13756C11.6281 7.46575 11.8125 7.91087 11.8125 8.375V12.75C11.8125 13.2141 11.6281 13.6592 11.2999 13.9874C10.9717 14.3156 10.5266 14.5 10.0625 14.5H3.9375C3.47337 14.5 3.02825 14.3156 2.70006 13.9874C2.37187 13.6592 2.1875 13.2141 2.1875 12.75V8.375Z" fill="#6C757D"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.9375 4C3.9375 3.18777 4.26016 2.40882 4.83449 1.83449C5.40882 1.26016 6.18777 0.9375 7 0.9375C7.81223 0.9375 8.59118 1.26016 9.16551 1.83449C9.73984 2.40882 10.0625 3.18777 10.0625 4V6.625H9.1875V4C9.1875 3.41984 8.95703 2.86344 8.5468 2.4532C8.13656 2.04297 7.58016 1.8125 7 1.8125C6.41984 1.8125 5.86344 2.04297 5.4532 2.4532C5.04297 2.86344 4.8125 3.41984 4.8125 4V6.625H3.9375V4Z" fill="#6C757D"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_1_2553">
-            <rect width="14" height="14" fill="white" transform="translate(0 0.5)"/>
-            </clipPath>
-            </defs>
-            </svg>            
-          <input
-            id="password"
-            type="password"
-            placeholder="password"
-            class="w-[380px] h-[37px] bg-gray-200 rounded-[4px] px-7"
-          />
-        </div>
-      </div>
-      <a href="/login" class="w-[47px] h-[21px] mt-5 font-medium">Login</a>
-      <button
+        <a href="/index" class="w-[47px] h-[21px] mt-5 font-medium">Login</a>
+        <button
+          id="loginBtn"
+          type="submit"
+          class="w-[380px] h-[47px] bg-gray-400 text-white rounded-[30px] mt-auto mb-5 "
 
-        type="submit"
-        class="w-[380px] h-[47px] bg-gray-400 text-white rounded-[30px] mt-[350px]"
-      >
-        Signup
-      </button>
+        >
+          Signin
+        </button>
+      </form>
     </div>
     <script type="module" src="/main.js"></script>
-    <script defer type="module" src="/scripts/login.js"></script>
+    <script defer type="module" src="/scripts/signup.js"></script>
   </body>
 </html>
