@@ -35,7 +35,7 @@
             <p class="text-[16px] font-semibold">See all</p>
         </div>
         <div class="h-[65px] flex justify-evenly items-center">
-          <section class="w-full flex space-x-2 pt-5  overflow-x-auto scrollbar-hide pb-6">
+          <section id="brandCont" class="w-full flex space-x-2 pt-5  overflow-x-auto scrollbar-hide pb-6">
             <button class="w-20 h-10 bg-[#343a40] text-white rounded-full py-2 px-4 border-2 flex items-center justify-center">All</button>
             <button class="w-16 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Nike</button>
             <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Adidas</button>
@@ -46,14 +46,10 @@
           </section>
         </div>
       </div>
-      <div id="cartContainer" class="w-full h-[550px] px-4 grid grid-cols-2 overflow-y-scroll">
-        <div id="cart" class="w-[182px] h-[244px] ">
-            <div class="w-[182px] h-[182px] bg-slate-100 rounded-[24px] flex justify-center items-center">
-                <img src="./pics/Rectangle 6.png" alt="">
-            </div>
-            <p class="font-bold text-[20px] line-clamp-1">K-Swiss ista Training</p>
-            <p class="font-semibold text-[16px]">$ 85.00</p>
-        </div>  
+      <div id="cont" class="w-full">
+        <div id="cartContainer" class="w-full h-[550px] grid grid-cols-2 overflow-y-scroll px-3">
+        </div>
+        <div id="pagination" class="flex justify-center items-center"></div>
       </div>
       <div><img src="./pics/action-bar.svg" alt="action-bar"></div>
     </div>

@@ -15,9 +15,9 @@ export const errorHandler = (error) => {
     if (statusCode === 403) {
       toast("Please login again");
       removeSessionToken();
-      // setTimeout(() => {
-      //   window.location.href = "/";
-      // }, 3000);
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 3000);
     }
   };
   

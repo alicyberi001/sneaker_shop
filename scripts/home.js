@@ -1,23 +1,16 @@
 import { errorHandler } from "../libs/errorHandling.js";
 import { getUserInfo } from "../apis/services/user.service";
-// import { getUserTasks } from "../apis/services/task.service";
+import { getBrands } from "../apis/services/user.service";
+import { getProducts } from "../apis/services/user.service";
 import { removeSessionToken } from "../libs/session_manager";
-// import {
-//   initTaskCardListeners,
-//   taskCardGenerator,
-// } from "../components/task-card";
-
-// const tasksListContainer = document.getElementById("tasks-list-container");
 
 const username = document.getElementById("username");
-// document.getElementById("logout-btn").addEventListener("click", () => {
-//   removeSessionToken();
-//   window.location.href = "/";
-// });
+let brandCont = document.getElementById("brandCont");
+let cartContainer = document.getElementById("cartContainer");
 
 async function fetchUserInfo() {
   try {
-    const response = await getUserInfo();
+    let response = await getUserInfo();
     console.log(response);
     username.innerText = response.username;
     username.setAttribute("title", response.username);
@@ -25,23 +18,6 @@ async function fetchUserInfo() {
     errorHandler(error);
   }
 }
-
-// async function renderTasks(list) {
-//   tasksListContainer.innerHTML = list
-//     .map((el) => taskCardGenerator(el))
-//     .join(" ");
-// }
-
-async function init() {
-  //   fetchUserInfo();
-  //   const list = await getUserTasks();
-  fetchUserInfo();
-  getGreeting();
-  //   renderTasks(list);
-  //   initTaskCardListeners(list, renderTasks);
-}
-
-init();
 
 function getGreeting() {
   const now = new Date();
@@ -59,3 +35,51 @@ function getGreeting() {
   }
   document.getElementById("time").textContent = greeting;
 }
+
+function brandGenerator(brand) {
+  return `
+  <button id="${brand}_id" class="w-full h-11 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center whitespace-nowrap ">${brand}</button>
+`;
+}
+
+function renderBrands(brandArr) {
+  brandCont.innerHTML = brandArr.map((el) => brandGenerator(el)).join(" ");
+}
+
+async function fetchBrands() {
+  let response = await getBrands(1);
+  renderBrands(response);
+}
+
+brandCont.addEventListener("click", clickBrand);
+
+async function clickBrand(event) {
+  let brandName = event.target.textContent;
+  // await fetchBrands();
+  // event.target.classList.add("font-bold");
+  const response = await getProducts(1, brandName);
+  renderCards(response.data);
+}
+
+function renderCards(cardArray) {
+  cartContainer.innerHTML = cardArray.map((el) => cardGenerator(el)).join(" ");
+}
+
+function cardGenerator({ imageURL, name, price }) {
+  return `
+  <div id="cart" class="w-[182px] h-[244px] ">
+      <div class="w-[182px] h-[182px] bg-slate-100 rounded-[24px] flex justify-center items-center overflow-hidden">
+          <img src="${imageURL}" alt="image">
+      </div>
+      <p class="font-bold text-[20px] line-clamp-1">${name}</p>
+      <p class="font-semibold text-[16px]">$ ${price}.00</p>
+  </div>`;
+}
+
+async function init() {
+  fetchUserInfo();
+  getGreeting();
+  fetchBrands();
+}
+
+init();

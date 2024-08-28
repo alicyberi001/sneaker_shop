@@ -6,7 +6,16 @@ export async function getUserInfo() {
   return response.data;
 }
 
-export async function getProducts() {
-  const response = await httpClient().get(urls.sneaker,{params : {page : 1, limit : 42}});
+export async function getProducts(page, brands = null) {
+  const params = { page, limit: 10 };
+  if (brands) {
+    params.brands = brands;
+  }
+  const response = await httpClient().get(urls.sneaker, { params });
+  return response.data;
+}
+
+export async function getBrands() {
+  const response = await httpClient().get(urls.brands);
   return response.data;
 }
