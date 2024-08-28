@@ -14,11 +14,11 @@
     /> -->
   </head>
   <body class="h-[100%]">
-    <div class="flex flex-col items-center w-full h-[100%] justify-between">
+    <div id="container" class="flex flex-col items-center w-full h-[100%] justify-between">
       <div class="w-full h-[80px] flex justify-between items-center px-4">
         <div class="ml-4">
-            <p>Good morning👌</p>
-            <p class="font-bold">Ali shabani</p>
+            <p id="time">Good morning👌</p>
+            <p id="username" class="font-bold">Ali shabani</p>
         </div>
         <div class="flex gap-3 mr-4">
           <div><img src="./pics/ring.png" alt="ring"></div>
@@ -36,22 +36,22 @@
         </div>
         <div class="h-[65px] flex justify-evenly items-center">
           <section class="w-full flex space-x-2 pt-5  overflow-x-auto scrollbar-hide pb-6">
-            <button class="w-20 h-10 bg-[#343a40] text-white rounded-full py-2 px-4 border-2">All</button>
-            <button class="w-16 h-10 bg-white rounded-full py-2 px-4 border-2">Nike</button>
-            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2">Adidas</button>
-            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2">Puma</button>
-            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2">Puma</button>
-            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2">Puma</button>
-            <button class="w-16 h-10 bg-white rounded-full py-2 px-4 border-2">Asi</button>
+            <button class="w-20 h-10 bg-[#343a40] text-white rounded-full py-2 px-4 border-2 flex items-center justify-center">All</button>
+            <button class="w-16 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Nike</button>
+            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Adidas</button>
+            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Puma</button>
+            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Puma</button>
+            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Puma</button>
+            <button class="w-16 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Asi</button>
           </section>
         </div>
       </div>
-      <div id="cartContainer" class="w-[100%] h-[550px] px-4 flex flex-col">
+      <div id="cartContainer" class="w-full h-[550px] px-4 grid grid-cols-2 overflow-y-scroll">
         <div id="cart" class="w-[182px] h-[244px] ">
             <div class="w-[182px] h-[182px] bg-slate-100 rounded-[24px] flex justify-center items-center">
                 <img src="./pics/Rectangle 6.png" alt="">
             </div>
-            <p class="font-bold text-[20px] line-clamp-1">K-Swiss ista Training hastesh</p>
+            <p class="font-bold text-[20px] line-clamp-1">K-Swiss ista Training</p>
             <p class="font-semibold text-[16px]">$ 85.00</p>
         </div>  
       </div>
@@ -59,5 +59,6 @@
     </div>
     <script type="module" src="/main.js"></script>
     <script defer type="module" src="/scripts/home.js"></script>
+    <script type="module" src="/components/sneakerCard.js"></script>
   </body>
 </html>

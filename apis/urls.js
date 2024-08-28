@@ -3,12 +3,8 @@ export const urls = {
     login: "/auth/login",
     signup: "/auth/signup",
   },
-  user: "/user",
-  task: {
-    new: "/task",
-    list: "/task",
-    delete: (id) => `/task/${id}`,
-    done: (id) => `/task/done/${id}`,
-    inprogress: (id) => `/task/inprogress/${id}`,
-  },
+  user : "/user",
+  sneaker: "/sneaker",
+  brand: "/sneaker/brands",
+  item: (id) => `/sneaker/item/${id}`,
 };

@@ -1,7 +1,7 @@
 import { toast } from "../libs/toast";
 import { login } from "../apis/services/auth.service";
 import { errorHandler } from "../libs/errorHandling.js";
-// import { setSessionToken } from "../libs/session-manager";
+import { setSessionToken } from "../libs/session_manager.js";
 
 const loginForm = document.getElementById("loginForm");
 const inputpass = document.getElementById("password");
@@ -45,7 +45,7 @@ loginForm.addEventListener("submit", async (event) => {
       username: usernameInput.value,
       password: passwordInput.value,
     });
-    // setSessionToken(response.token);
+    setSessionToken(response.token);
     toast("Logged in", "success");
     setTimeout(() => {
       window.location.href = "/home";

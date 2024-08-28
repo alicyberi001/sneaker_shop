@@ -1,5 +1,5 @@
 import { toast } from "./toast";
-// import { removeSessionToken } from "./session-manager";
+import { removeSessionToken } from "./session_manager";
 
 export const errorHandler = (error) => {
     const message = error.response?.data?.message;
@@ -14,10 +14,10 @@ export const errorHandler = (error) => {
     const statusCode = Number(error.response?.data?.statusCode || 0);
     if (statusCode === 403) {
       toast("Please login again");
-    //   removeSessionToken();
-      setTimeout(() => {
-        window.location.href = "/";
-      }, 3000);
+      removeSessionToken();
+      // setTimeout(() => {
+      //   window.location.href = "/";
+      // }, 3000);
     }
   };
   
