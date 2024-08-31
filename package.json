@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "axios": "^1.7.5",
+    "debounce": "^2.1.0",
+    "lodash": "^4.17.21",
     "tailwind-scrollbar-hide": "^1.1.7",
     "toastify-js": "^1.12.0"
   }

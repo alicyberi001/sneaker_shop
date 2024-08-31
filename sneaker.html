@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>home</title>
+    <title>sneaker</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -19,9 +19,8 @@
       rel="stylesheet"
     />
   </head>
-  <body class="box-border relative">
-    <div class="flex flex-nowrap gap-3 overflow-x-scroll w-[240px] absolute"></div>
-    <div class="container flex flex-col items-center h-full justify-between relative">
+  <body class="box-border relative h-full">
+    <div id="container" class="container flex flex-col items-center h-full w-full relative">
       <a href="/home"><i class="fas fa-arrow-left absolute top-[17px] left-[20px]"></i></a>
       <div class="h-[450px] w-full bg-gray-200"></div>
       <div class="h-[100px] w-[90%] border-b">
@@ -75,20 +74,20 @@
             <div id="plus"><i class="fas fa-plus"></i></div>
         </div>
       </div>
-      <div class="h-[100px] w-[90%] flex items-center justify-between">
+      <div class="h-[100px] w-[90%] flex items-center justify-between mt-auto">
         <div>
           <p class="text-[12px]">Total Price</p>
           <p class="text-[18px] font-bold">$240.00</p>
         </div>
-        <div class="relative">
-          <img src="./pics/icons8-bag-48.png" alt="bag" class="w-5 h-5 absolute left-16 top-2.5">
-          <button class="bg-black w-[240px] h-11 text-white text-sm rounded-full pl-[25px] shadow-black shadow-2xl">
+        <div class="relative w-[60%]">
+          <img src="./pics/icons8-bag-48.png" alt="bag" class="w-5 h-5 absolute left-[22%] top-2.5">
+          <button class="bg-black w-full h-11 text-white text-sm rounded-full pl-[25px] shadow-black shadow-2xl">
             Add to cart
           </button>
         </div>
       </div>
     </div>
     <script type="module" src="/main.js"></script>
-    <script defer type="module" src="/scripts/home.js"></script>
+    <script defer type="module" src="/scripts/sneaker.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-[100%]">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -7,7 +7,7 @@
     <title>Signup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
-  <body class="h-[100%]">
+  <body class="h-full">
     <div
       class="container w-full flex-col flex items-center justify-center px-6 h-[100%]"
     >
@@ -41,12 +41,12 @@
           />
         </svg>
       </div>
-      <p class="text-[29px] font-semibold w-full h-[39px] mb-9 whitespace-nowrap">
+      <p class="text-[23px] text-center font-semibold w-[90%] h-[39px] mb-9 whitespace-nowrap">
         Signup to to your Account
       </p>
-      <form id="signupForm" action="" class="relative flex flex-col justify-center items-center h-[100%] flex-1">
-        <div class="flex flex-col items-center justify-center gap-y-5">
-          <div class="relative">
+      <form id="loginForm" action="" class="relative flex flex-col justify-center items-center h-[100%] w-full flex-1">
+        <div class="flex flex-col items-center justify-center gap-y-5 w-full">
+          <div class="relative w-full">
             <svg
               class="absolute top-3 left-2"
               width="14"
@@ -67,10 +67,10 @@
               id="inputuser"
               type="text"
               placeholder="username"
-              class="w-[380px] h-[37px] bg-gray-200 rounded-[4px] px-7"
+              class="w-full h-[37px] bg-gray-200 rounded-[4px] px-7"
             />
           </div>
-          <div class="relative">
+          <div class="relative w-full">
             <i id="eyes" class="fas fa-eye absolute top-3 right-2"></i>
             <svg class="absolute top-3 left-2" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_1_2553)">
@@ -88,22 +88,22 @@
               id="password"
               type="password"
               placeholder="password"
-              class="w-[380px] h-[37px] bg-gray-200 rounded-[4px] px-7"
+              class="w-full h-[37px] bg-gray-200 rounded-[4px] px-7"
             />
           </div>
         </div>
-        <a href="/index" class="w-[47px] h-[21px] mt-5 font-medium">Login</a>
+        <a href="/index" class="w-[47px] h-[21px] mt-5 font-medium">Signup</a>
         <button
           id="loginBtn"
           type="submit"
-          class="w-[380px] h-[47px] bg-gray-400 text-white rounded-[30px] mt-auto mb-5 "
+          class="w-full h-[47px] bg-gray-400 text-white rounded-[30px] mt-auto mb-5 "
 
         >
-          Signin
+          Login
         </button>
       </form>
     </div>
     <script type="module" src="/main.js"></script>
-    <script defer type="module" src="/scripts/signup.js"></script>
+    <script defer type="module" src="/scripts/login.js"></script>
   </body>
 </html>

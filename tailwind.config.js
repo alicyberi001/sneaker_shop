@@ -2,7 +2,18 @@
 export default {
   content: ["./**/*.html", "./**/*.{js,ts,jsx,tsx}", "./components/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'xblack': '#000000',
+        'xbrown': '#3a1d01',
+        'xwhite': '#ffffff',
+        'xblue': '#007aae',
+        'xred': '#ae0000',
+      },
+      screens: {
+        'fold': {'max': '350px'},
+      },
+    },
   },
-  plugins: [require('tailwind-scrollbar-hide')],
+  plugins: [require("tailwind-scrollbar-hide")],
 };

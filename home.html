@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-[100%]">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -13,9 +13,9 @@
       referrerpolicy="no-referrer"
     /> -->
   </head>
-  <body class="h-[100%]">
-    <div id="container" class="flex flex-col items-center w-full h-[100%] justify-between">
-      <div class="w-full h-[80px] flex justify-between items-center px-4">
+  <body class="h-full">
+    <div id="container" class="flex flex-col items-center w-full h-[100%]">
+      <div class="w-full h-[80px] flex justify-between items-center px-4 mt-2 mb-3">
         <div class="ml-4">
             <p id="time">Good morning👌</p>
             <p id="username" class="font-bold">Ali shabani</p>
@@ -25,33 +25,27 @@
           <div><img src="./pics/heart.png" alt="heart"></div>
         </div>
       </div>
-      <div class="w-[380px] h-[37px] relative">
+      <div class="h-[37px] w-[90%] relative mb-3 flex justify-center">
         <div class="absolute top-2.5 left-3"><img src="./pics/magnify.png" alt="magnify"></div>
-        <input class="w-[380px] h-[37px] bg-slate-100 rounded-md pl-9" placeholder="Search"></input>
+        <input id="searchBar" class="w-full h-[40px] bg-slate-100 rounded-xl pl-9 " placeholder="Search"></input>
       </div>
-      <div class="w-[100%] h-[100px]">
+      <div class="w-[100%]">
         <div class="h-[35px] flex justify-between items-center px-4">
-            <p class="text-[20px] font-semibold">Most popular</p>
-            <p class="text-[16px] font-semibold">See all</p>
+            <p id="leftSpan" class="text-[20px] font-semibold">Most popular</p>
+            <p id="rightSpan" class="text-[16px] font-semibold">See all</p>
         </div>
-        <div class="h-[65px] flex justify-evenly items-center">
-          <section id="brandCont" class="w-full flex space-x-2 pt-5  overflow-x-auto scrollbar-hide pb-6">
-            <button class="w-20 h-10 bg-[#343a40] text-white rounded-full py-2 px-4 border-2 flex items-center justify-center">All</button>
-            <button class="w-16 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Nike</button>
-            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Adidas</button>
-            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Puma</button>
-            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Puma</button>
-            <button class="w-20 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Puma</button>
-            <button class="w-16 h-10 bg-white rounded-full py-2 px-4 border-2 flex items-center justify-center">Asi</button>
+        <div id="contb" class="h-[65px] flex justify-evenly items-center">
+          <section id="brandCont" class="w-full w- flex space-x-2 pt-5  overflow-x-auto scrollbar-hide pb-6">
+        
           </section>
         </div>
       </div>
-      <div id="cont" class="w-full">
-        <div id="cartContainer" class="w-full h-[550px] grid grid-cols-2 overflow-y-scroll px-3">
+      <div id="cont" class="w-full overflow-y-scroll">
+        <div id="cartContainer" class="w-full grid grid-cols-2 fold:grid-cols-1  px-3 justify-items-center">
         </div>
-        <div id="pagination" class="flex justify-center items-center"></div>
+        <div id="pagination" class="flex justify-center items-center mb-4 mt-1"></div>
       </div>
-      <div><img src="./pics/action-bar.svg" alt="action-bar"></div>
+      <div id="action-bar" class="mt-auto"><img src="./pics/action-bar.svg" alt="action-bar"></div>
     </div>
     <script type="module" src="/main.js"></script>
     <script defer type="module" src="/scripts/home.js"></script>
