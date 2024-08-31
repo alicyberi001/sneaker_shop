@@ -19,9 +19,9 @@ function elemGenerator({ imageURL, name, price, sizes }) {
   container.innerHTML = `
     <a href="/home"><i class="fas fa-arrow-left absolute top-[17px] left-[20px]"></i></a>
       <div class="h-[400px] w-full bg-[#F6F6F6]"><img src="${imageURL}"></img></div>
-      <div class=" w-[90%] border-b pb-4">
+      <div class=" w-[90%] border-b pb-4 pt-6 fold:pt-0">
         <div class="flex justify-between items-center mt-3">
-          <div class="text-[27px] font-semibold">${name}</div>
+          <div class="text-[27px] fold:text-[23px] font-semibold">${name}</div>
           <div><img src="./pics/heart.png" alt="heart" /></div>
         </div>
         <div class="flex items-center mt-3 gap-2">
@@ -34,7 +34,7 @@ function elemGenerator({ imageURL, name, price, sizes }) {
           <p class="text-[10px] text-gray-700">4.3(5.389 reviews)</p>
         </div>
       </div>
-      <div class="w-[90%]">
+      <div class="w-[90%] mt-3">
         <span class="font-bold">Description</span><br>
         <span class="text-ellipsis overflow-hidden">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
         Non  
@@ -57,7 +57,7 @@ function elemGenerator({ imageURL, name, price, sizes }) {
           </div>
         </div>
       </div>
-      <div class="h-[50px] w-[90%] flex items-center gap-3">
+      <div class="h-[50px] w-[90%] flex items-center gap-3 flex-1">
         <p class="text-[17px] font-semibold">Quantity</p>
         <div class="w-[95px] h-8 bg-gray-200 rounded-full flex items-center justify-evenly">
             <div id="minus" class='minus'><i class="fas fa-minus"></i></div>
@@ -65,7 +65,7 @@ function elemGenerator({ imageURL, name, price, sizes }) {
             <div id="plus" class='plus'><i class="fas fa-plus"></i></div>
         </div>
       </div>
-      <div class="h-[100px] w-[90%] border-t flex items-center justify-between mt-auto">
+      <div class="h-[100px] w-[90%] fold:h-[90px] border-t flex items-center justify-between mt-auto">
         <div>
           <p class="text-[12px]">Total Price</p>
           <p id="price" class="text-[18px] font-bold">$00.00</p>
@@ -88,9 +88,15 @@ function colorGenerator(colors) {
     white: "bg-xwhite",
   };
   let colorContainer = document.getElementById("colorContainer");
+  let arrayColor = colorContainer.children
+  // arrayColor.forEach((el) => {
+  //   el.addEventListener("click",() => {
+     
+  //   })
+  // })
   let colorArr = colors.split("|");
   colorArr.forEach((el) => {
-    colorContainer.innerHTML += `<button class="w-9 h-9 rounded-full py-2 px-4 border-2 focus:bg-slate-200/70 ${obj[el]}"></button>`;
+    colorContainer.innerHTML += `<button class="flex items-center justify-center w-9 h-9 rounded-full py-2 px-4 border-2 focus:bg-slate-200/70 ${obj[el]}"><img src="../pics/icons8-tick-50.png"class="w-9 h-9"></img></button>`;
   });
 }
 

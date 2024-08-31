@@ -29,7 +29,7 @@ async function fetchUserInfo() {
   }
 }
 
-function getGreeting() {
+function dayTime() {
   const now = new Date();
   const hours = now.getHours();
   let greeting;
@@ -62,7 +62,7 @@ async function fetchBrands() {
   renderBrands(response);
 }
 
-brandCont.addEventListener("click", clickBrand);
+
 
 let currentBrand = null;
 let currentPage = 1;
@@ -99,12 +99,31 @@ async function clickBrand(event) {
 
 function renderCards(cardArray) {
   cartContainer.innerHTML = cardArray.map((el) => cardGenerator(el)).join(" ");
+
+  const paginationDiv = document.getElementById("pagination");
+  paginationDiv.classList.add("hidden");
+
+  const cards = cartContainer.children;
+  const delay = 100;
+  Array.from(cards).forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.remove("hidden"); 
+      card.classList.add("animate-fade-in"); 
+
+      if (index === cards.length - 1) {
+        setTimeout(() => {
+          paginationDiv.classList.remove("hidden");
+          paginationDiv.classList.add("animate-fade-in");
+        }, delay);
+      }
+    }, index * delay);
+  });
 }
 
 function cardGenerator({ imageURL, name, price, id }) {
   return `
-  <a href="/sneaker?id=${id}"><div id="${id}" class="w-[182px] h-[244px] ">
-      <div class="w-[180px] h-[180px] bg-slate-100 rounded-[24px] flex justify-center items-center overflow-hidden">
+  <a href="/sneaker?id=${id}" class="hidden"><div id="${id}" class="w-[182px] h-[244px] fold:w-[150px] fold:h-[220px]">
+      <div class="w-[180px] h-[180px] fold:w-[150px] fold:h-[150px] bg-slate-100 rounded-[24px] flex justify-center items-center overflow-hidden">
           <img src="${imageURL}" alt="image">
       </div>
       <p class="font-bold text-[20px] line-clamp-1">${name}</p>
@@ -139,31 +158,17 @@ searchBar.addEventListener("blur", () => {
 let currentSearch = "";
 let totalSearchResults = 0;
 
-searchBar.addEventListener("input", searchAction);
-
-async function searchAction() {
-  currentSearch = this.value;
-  await fetchSearchResults(1);
-  if (currentSearch.length == 0) {
-    leftSpan.textContent = "Most Popular";
-    rightSpan.textContent = "See All";
-  } else {
-    leftSpan.textContent = `Result for "${currentSearch}"`;
-    rightSpan.textContent = `${totalSearchResults} founds`;
-  }
+function debounce(func, delay) {
+  let timeoutId;
+  return function(...args) {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
 }
-
-// function debounce(fn, delay = 2000) {
-//   let timeout = null;
-
-//   return (...args) => {
-//     clearTimeout(timeout);
-
-//     timeout = setTimeout(() => {
-//       fn(...args);
-//     }, delay);
-//   }
-// }
 
 async function fetchSearchResults(page) {
   currentPage = page;
@@ -211,12 +216,27 @@ function setupPagination(isSearch = false) {
 
 async function init() {
   fetchUserInfo();
-  getGreeting();
+  dayTime();
   fetchBrands();
   fetchProducts(1);
 }
 
 init();
+
+
+brandCont.addEventListener("click", clickBrand);
+
+searchBar.addEventListener("input", debounce(async function() {
+  currentSearch = this.value;
+  await fetchSearchResults(1);
+  if (currentSearch.length == 0) {
+    leftSpan.textContent = "Most Popular";
+    rightSpan.textContent = "See All";
+  } else {
+    leftSpan.textContent = `Result for "${currentSearch}"`;
+    rightSpan.textContent = `${totalSearchResults} founds`;
+  }
+}, 1500));
 
 cont.addEventListener("click", (event) => {
   console.log(event.target);

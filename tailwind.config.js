@@ -13,6 +13,15 @@ export default {
       screens: {
         'fold': {'max': '350px'},
       },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
