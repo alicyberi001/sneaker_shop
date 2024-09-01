@@ -136,7 +136,7 @@ function updateNextButton() {
 
 // Get Started Actions Function
 function getStartedActions() {
-    window.location.href = "/" 
+    window.location.href = "/login" 
   // Add Class (wrapper--has-fade)
   wrapper.classList.add('wrapper--has-fade');
 };

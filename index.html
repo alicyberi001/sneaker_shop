@@ -1,109 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="onboardin.css">
   </head>
-  <body class="h-full">
-    <div
-      class="container w-full flex-col flex items-center justify-center px-6 h-[100%]"
-    >
-      <div class="w-full h-[56px] items-center flex">
-        <svg
-          width="16"
-          height="14"
-          viewBox="0 0 16 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M15.9998 7.00029C15.9998 7.2655 15.8945 7.51986 15.7069 7.70739C15.5194 7.89493 15.2651 8.00029 14.9998 8.00029H3.41383L7.70783 12.2923C7.80081 12.3853 7.87456 12.4956 7.92488 12.6171C7.9752 12.7386 8.0011 12.8688 8.0011 13.0003C8.0011 13.1318 7.9752 13.262 7.92488 13.3835C7.87456 13.5049 7.80081 13.6153 7.70783 13.7083C7.61486 13.8013 7.50448 13.875 7.383 13.9253C7.26152 13.9757 7.13132 14.0015 6.99983 14.0015C6.86835 14.0015 6.73815 13.9757 6.61667 13.9253C6.49519 13.875 6.38481 13.8013 6.29183 13.7083L0.291834 7.70829C0.198708 7.6154 0.124822 7.50504 0.074409 7.38355C0.0239961 7.26206 -0.00195313 7.13182 -0.00195312 7.00029C-0.00195313 6.86875 0.0239961 6.73851 0.074409 6.61702C0.124822 6.49553 0.198708 6.38518 0.291834 6.29229L6.29183 0.292287C6.47961 0.104514 6.73428 -0.000976562 6.99983 -0.000976562C7.26539 -0.000976562 7.52006 0.104514 7.70783 0.292287C7.89561 0.48006 8.0011 0.734735 8.0011 1.00029C8.0011 1.26584 7.89561 1.52051 7.70783 1.70829L3.41383 6.00029H14.9998C15.2651 6.00029 15.5194 6.10564 15.7069 6.29318C15.8945 6.48072 15.9998 6.73507 15.9998 7.00029Z"
-            fill="black"
-          />
-        </svg>
-      </div>
-      <div class="div mt-20 mb-20">
-        <svg
-          width="54"
-          height="81"
-          viewBox="0 0 54 81"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9.23355 17.7415C22.2531 10.4389 33.6453 3.542 39.7482 0.499261C44.834 -2.54348 47.1042 9.00132 42.7997 16.7273C38.4952 24.4532 26.5252 28.8982 26.5252 28.8982C26.5252 28.8982 52.9712 22.8128 53.9884 46.1404C54.2537 52.2259 49.9198 59.3256 46.8683 61.3541C43.8168 63.3826 17.3708 79.1034 14.3194 80.6248C10.7425 82.4081 9.23359 77.582 9.23359 71.4965C9.23359 57.2971 25.5081 52.2259 25.5081 52.2259C11.2679 54.2544 2.1135 49.1832 0.0791923 33.9695C-0.598903 28.8982 3.13068 21.1646 9.23355 17.7415Z"
-            fill="black"
-          />
-        </svg>
-      </div>
-      <p class="text-[23px] text-center font-semibold w-[90%] h-[39px] mb-9 whitespace-nowrap">
-        Login to to your Account
-      </p>
-      <form id="loginForm" action="" class="relative flex flex-col justify-center items-center h-[100%] w-full flex-1">
-        <div class="flex flex-col items-center justify-center gap-y-5 w-full">
-          <div class="relative w-full">
-            <svg
-              class="absolute top-3 left-2"
-              width="14"
-              height="11"
-              viewBox="0 0 14 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M0.04375 1.61063C0.131966 1.22409 0.348823 0.878961 0.658806 0.63177C0.968789 0.384578 1.35352 0.249973 1.75 0.25H12.25C12.6465 0.249973 13.0312 0.384578 13.3412 0.63177C13.6512 0.878961 13.868 1.22409 13.9563 1.61063L7 5.86225L0.04375 1.61063ZM0 2.60987V8.82587L5.07762 5.71263L0 2.60987ZM5.91587 6.22625L0.167125 9.74988C0.309161 10.0494 0.533336 10.3024 0.813559 10.4794C1.09378 10.6565 1.41853 10.7503 1.75 10.75H12.25C12.5814 10.7501 12.906 10.656 13.1861 10.4788C13.4662 10.3016 13.6902 10.0485 13.832 9.749L8.08325 6.22538L7 6.88775L5.91587 6.22538V6.22625ZM8.92237 5.7135L14 8.82587V2.60987L8.92237 5.71263V5.7135Z"
-                fill="#6C757D"
-              />
-            </svg>
-            <input
-              name="username"
-              id="inputuser"
-              type="text"
-              placeholder="username"
-              class="w-full h-[37px] bg-gray-200 rounded-[4px] px-7"
-            />
-          </div>
-          <div class="relative w-full">
-            <i id="eyes" class="fas fa-eye absolute top-3 right-2"></i>
-            <svg class="absolute top-3 left-2" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_1_2553)">
-              <path d="M2.1875 8.375C2.1875 7.91087 2.37187 7.46575 2.70006 7.13756C3.02825 6.80937 3.47337 6.625 3.9375 6.625H10.0625C10.5266 6.625 10.9717 6.80937 11.2999 7.13756C11.6281 7.46575 11.8125 7.91087 11.8125 8.375V12.75C11.8125 13.2141 11.6281 13.6592 11.2999 13.9874C10.9717 14.3156 10.5266 14.5 10.0625 14.5H3.9375C3.47337 14.5 3.02825 14.3156 2.70006 13.9874C2.37187 13.6592 2.1875 13.2141 2.1875 12.75V8.375Z" fill="#6C757D"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.9375 4C3.9375 3.18777 4.26016 2.40882 4.83449 1.83449C5.40882 1.26016 6.18777 0.9375 7 0.9375C7.81223 0.9375 8.59118 1.26016 9.16551 1.83449C9.73984 2.40882 10.0625 3.18777 10.0625 4V6.625H9.1875V4C9.1875 3.41984 8.95703 2.86344 8.5468 2.4532C8.13656 2.04297 7.58016 1.8125 7 1.8125C6.41984 1.8125 5.86344 2.04297 5.4532 2.4532C5.04297 2.86344 4.8125 3.41984 4.8125 4V6.625H3.9375V4Z" fill="#6C757D"/>
-              </g>
-              <defs>
-              <clipPath id="clip0_1_2553">
-              <rect width="14" height="14" fill="white" transform="translate(0 0.5)"/>
-              </clipPath>
-              </defs>
-              </svg>            
-            <input
-              name="password"
-              id="password"
-              type="password"
-              placeholder="password"
-              class="w-full h-[37px] bg-gray-200 rounded-[4px] px-7"
-            />
-          </div>
+  <body>
+    <!-- wrapper -->
+<main class="wrapper">
+    <!-- Slides Area -->
+    <section class="slides-area">
+      <article class="slide slides-area__slide">
+        <img src="./pics/WallpaperDog-20534536 1.png" alt="illustration" class="slide__image">
+  
+        <div class="slide__text">
+          <h2 class="slide__title">We provide high quality products just for you</h2>
         </div>
-        <a href="/signup" class="w-[47px] h-[21px] mt-5 font-medium">Signup</a>
-        <button
-          id="loginBtn"
-          type="submit"
-          class="w-full h-[47px] bg-gray-400 text-white rounded-[30px] mt-auto mb-5 "
-
-        >
-          Login
-        </button>
-      </form>
-    </div>
+      </article>
+      <article class="slide slides-area__slide">
+        <img src="./pics/WallpaperDog-20397673 1.png" alt="illustration" class="slide__image">
+  
+        <div class="slide__text">
+          <h2 class="slide__title">Your satisfaction is our number one periority</h2>
+        </div>
+      </article>
+      <article class="slide slides-area__slide">
+        <img src="./pics/WallpaperDog-20534715 1.png" alt="illustration" class="slide__image">
+  
+        <div class="slide__text">
+          <h2 class="slide__title">Let’s fulfill your fashion needs with shoearight now!</h2>
+        </div>
+      </article>
+    </section>
+    
+    <!-- Paginations Area -->
+    <section class="paginations-area"></section>
+    
+    <!-- Next Button -->
+    <button class="button button-next w-[80%] mt-10 fold:mt-24" aria-label="to get next slide">Next</button>
+  
+  </main>
+  <!-- End Wrapper -->
     <script type="module" src="/main.js"></script>
-    <script defer type="module" src="/scripts/login.js"></script>
+    <script defer type="module" src="/scripts/onboarding.js"></script>
   </body>
 </html>
