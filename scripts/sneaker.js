@@ -12,6 +12,7 @@ async function fetchPageElems() {
   colorGenerator(response.colors);
   initial(response.price);
   view();
+  colortick();
 }
 
 function elemGenerator({ imageURL, name, price, sizes }) {
@@ -88,15 +89,22 @@ function colorGenerator(colors) {
     white: "bg-xwhite",
   };
   let colorContainer = document.getElementById("colorContainer");
-  let arrayColor = colorContainer.children
-  // arrayColor.forEach((el) => {
-  //   el.addEventListener("click",() => {
-     
-  //   })
-  // })
+  let arrayColor = colorContainer.children;
   let colorArr = colors.split("|");
   colorArr.forEach((el) => {
-    colorContainer.innerHTML += `<button class="flex items-center justify-center w-9 h-9 rounded-full py-2 px-4 border-2 focus:bg-slate-200/70 ${obj[el]}"><img src="../pics/icons8-tick-50.png"class="w-9 h-9"></img></button>`;
+    colorContainer.innerHTML += `<button class="flex items-center justify-center w-9 h-9 rounded-full py-2 px-4 border-2 focus:bg-slate-200/70 ${obj[el]}"><i class="fas fa-check hidden"></i></button>`;
+  });
+}
+
+let currentColor
+function colortick() {
+  let colorContainer = document.getElementById("colorContainer");
+  colorContainer.addEventListener("click", (event) => {
+    if(currentColor){
+      currentColor.classList.replace("visible", "hidden")
+    }
+    event.target.children[0].classList.replace("hidden", "visible");
+    currentColor = event.target.children[0]
   });
 }
 

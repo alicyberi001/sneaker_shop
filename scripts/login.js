@@ -50,7 +50,6 @@ loginForm.addEventListener("submit", async (event) => {
     setTimeout(() => {
       window.location.href = "/home";
     }, 3000);
-    console.log('ok');
     
   } catch (error) {
     console.log(error);

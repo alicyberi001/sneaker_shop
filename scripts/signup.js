@@ -45,7 +45,7 @@ signupForm.addEventListener("submit", async (event) => {
       username: usernameInput.value,
       password: passwordInput.value,
     });
-    // setSessionToken(response.token);
+    setSessionToken(response.token);
     toast("signed in", "success");
     setTimeout(() => {
       window.location.href = "/index";
